@@ -38,3 +38,4 @@ export { default as sortByProperty } from './sort-by-property';
 export { default as triggerMouseEvent } from './trigger-mouse-event';
 export { default as truncate } from './truncate';
 export { default as underscoreToCamel } from './underscore-to-camel';
+export * as route from './route';
