@@ -6,8 +6,9 @@ const config = {
         }
     },
     "plugins": [
+        "transform-es2015-modules-commonjs",
         "transform-class-properties",
-        "syntax-dynamic-import",
+        "@babel/plugin-proposal-object-rest-spread"
     ]
 }
 
