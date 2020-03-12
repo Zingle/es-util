@@ -1,4 +1,4 @@
-import getDelayNom from '../get-delay-nom';
+import getDelayNom from '../src/get-delay-nom';
 
 describe('getDelayNom', () => {
     it('Renders correct plurality', () => {

@@ -1,5 +1,5 @@
-import normalizeHeaders from '../normalize-headers';
-import normalizeRows from '../normalize-rows';
+import normalizeHeaders from '../src/normalize-headers';
+import normalizeRows from '../src/normalize-rows';
 
 describe('normalizeHeaders', () => {
     it('returns array with extra entries if rows have more items than header', () => {

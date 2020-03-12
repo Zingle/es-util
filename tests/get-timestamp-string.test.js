@@ -1,4 +1,17 @@
-import { getApproximateDiffString } from '../get-timestamp-string';
+import moment from 'moment';
+import {
+    formatDistanceToNow
+} from 'date-fns';
+import { getApproximateDiffString } from '../src/get-timestamp-string';
+import getTimestampString from "../src/get-timestamp-string";
+
+describe('getTimestampString', () => {
+    it('calls formatDistanceFromNow', () => {
+        let t = moment().add('3', 'days').valueOf();
+
+        expect(getTimestampString(t)).toEqual(formatDistanceToNow(t));
+    });
+});
 
 describe('getApproximateDiffString', () => {
     it('returns difference in words when hour and minutes both have value', () => {

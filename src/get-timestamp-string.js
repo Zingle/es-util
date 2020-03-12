@@ -4,7 +4,7 @@ import {
     differenceInHours,
     differenceInDays,
     isAfter,
-    distanceInWordsToNow,
+    formatDistanceToNow,
     differenceInMonths,
     differenceInYears,
     subSeconds
@@ -88,7 +88,7 @@ export default function getTimestampString(time, truncate = false, forceFuture =
         // exact a word representation of time, so use distanceInWordsToNow.
         // If closer than 5 hours, use a more precise measurement.
         if (hours > 5) {
-            return distanceInWordsToNow(bufferedTime);
+            return formatDistanceToNow(bufferedTime);
         } else {
             return getApproximateDiffString(hours, minutes, seconds);
         }
