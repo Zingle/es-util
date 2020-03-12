@@ -21,7 +21,7 @@
     "clean": "rm -rf ./dist",
     "build": "npm run build:files && npm run build:copy",
     "build:copy": "cp ./package.json ./dist",
-    "build:files": "babel src --out-dir ./dist --ignore \"**/*.test.js\"",
+    "build:files": "babel src --out-dir ./dist",
     "release": "npm run clean && npm run build && npm publish dist"
   },
   "dependencies": {
