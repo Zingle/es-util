@@ -1,6 +1,6 @@
 {
   "name": "@zingle/es-util",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "ECMAScript Utilities",
   "engines": {
     "node": ">=10.18"
