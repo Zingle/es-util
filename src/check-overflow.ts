@@ -3,9 +3,10 @@
 // Will temporarily modify the "overflow" style to detect this
 // if necessary.
 // https://stackoverflow.com/questions/143815/determine-if-an-html-elements-content-overflows
-export default function checkOverflow(el) {
-    if (!el) return false;
-
+export default function checkOverflow(el: HTMLElement): boolean {
+    if (!el) {
+        return false;
+    }
     const curOverflow = el.style.overflow;
 
     if (!curOverflow || curOverflow === 'visible') {
@@ -13,7 +14,6 @@ export default function checkOverflow(el) {
     }
 
     const isOverflowing = el.clientWidth < el.scrollWidth || el.clientHeight < el.scrollHeight;
-
     el.style.overflow = curOverflow;
 
     return isOverflowing;

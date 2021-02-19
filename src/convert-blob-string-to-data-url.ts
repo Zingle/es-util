@@ -1,4 +1,4 @@
-function toDataURL(url) {
+export default function toDataURL(url: string): Promise<string|ArrayBuffer|null> {
     return new Promise(resolve => {
         const xhr = new XMLHttpRequest();
 
@@ -14,5 +14,3 @@ function toDataURL(url) {
         xhr.send();
     });
 }
-
-export default toDataURL;

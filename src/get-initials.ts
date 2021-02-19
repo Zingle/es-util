@@ -10,14 +10,14 @@ const titles = [
     'Capt'
 ];
 
-export default function getInitials(title) {
-    if (!title) return '';
+export default function getInitials(title: string): string {
+    if (!title) {
+        return '';
+    }
+
     const match = title.match(/\b(\w+)\b/g);
     const parts = match ? match.filter(part => !titles.includes(part)).join(' ') : '';
+    const initials = parts.match(/\b\w/g) || [];
 
-    let initials = parts.match(/\b\w/g) || [];
-
-    initials = ((initials.shift() || '') + (initials.pop() || '')).toUpperCase();
-
-    return initials;
+    return ((initials.shift() || '') + (initials.pop() || '')).toUpperCase();
 }

@@ -6,6 +6,7 @@
     "node": ">=10.18"
   },
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/Zingle/es-util.git"
@@ -19,10 +20,9 @@
     "test:coverage": "./node_modules/jest/bin/jest.js --detectOpenHandles --coverage --coverageReporters=text-lcov > coverage.report",
     "coveralls": "cat coverage.report | ./node_modules/.bin/coveralls",
     "clean": "rm -rf ./dist",
-    "build": "npm run build:files && npm run build:copy",
-    "build:copy": "cp ./package.json ./dist",
-    "build:files": "babel src --out-dir ./dist",
-    "release": "npm run clean && npm run build && npm publish dist"
+    "build": "tsc",
+    "prepublish": "npm run clean && npm run build",
+    "release": "npm publish"
   },
   "dependencies": {
     "configstore": "^5.0.1",
@@ -48,6 +48,7 @@
     "eslint": "^6.8.0",
     "eslint-plugin-react": "^7.19.0",
     "esm": "^3.2.25",
-    "jest": "^25.1.0"
+    "jest": "^25.1.0",
+    "typescript": "^4.1.5"
   }
 }
